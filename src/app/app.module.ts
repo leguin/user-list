@@ -9,6 +9,7 @@ import { UserListComponent } from './user/user-list.component';
 import { UserFormComponent } from './user/user-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { UserService } from './user/user.service';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     RouterModule.forRoot(appRoutes),
     NgbModule.forRoot()    
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

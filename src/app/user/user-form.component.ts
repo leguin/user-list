@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { User } from './user.entity';
+import { UserService } from './user.service';
 
 
 @Component({
@@ -40,11 +41,13 @@ export class UserFormComponent {
 
   submitted: boolean = false;
 
+  constructor(private userService : UserService) {
+    
+  }
+
   onSubmit() 
   { 
     this.submitted = true; 
+    this.userService.add(this.model);
   }
-
-  // TODO: Remove this when we're done
-  get diagnostic() { return JSON.stringify(this.model); }
 }
